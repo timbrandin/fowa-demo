@@ -1,0 +1,24 @@
+<body>
+  <header>
+    <h1>Let's chat</h1>
+    {{> loginButtons}}
+  </header>
+
+  <ul class="messages">
+    {{#each recentMessages}}
+      {{> message}}
+    {{/each}}
+  </ul>
+
+  <footer>
+    <div class="textarea" contenteditable="true"></div>
+  </footer>
+</body>
+
+<template name="message">
+  <li>
+    <img src="{{picture}}" />
+    <div class="user">{{username}} <span class="time">{{time}}</span></div>
+    <div class="message">{{text}}</div>
+  </li>
+</template>
